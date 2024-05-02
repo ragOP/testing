@@ -269,7 +269,7 @@ export default function Fifth_SP() {
     if (quiz === "1. Do you have any personal and family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("2. Do you live in the United States?");
+      setQuiz("2. Is medicare your primary insurance?");
     } else {
       setStep("Reviewing Your Answers...");
      
@@ -304,7 +304,7 @@ export default function Fifth_SP() {
     if (quiz === "Are you over the age of 60?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("2. Do you live in the United States?");
+      setQuiz("2. Is medicare your primary insurance?");
     } else {
       setStep("Reviewing Your Answers...");
     
@@ -389,7 +389,8 @@ export default function Fifth_SP() {
         <div className="checking">
           <div className="congrats">Congratulation, You Qualify!</div>
           <div className="top-description-5">
-            Make A <b>Quick Call</b> To Claim Your Grocery Allowance!
+            Make A <b>Quick Call</b> Claim Your Zero Cost Genetic Screening Kit.
+            
           </div>
           <div className="spots-count">Spots remaining: 4</div>
           <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>

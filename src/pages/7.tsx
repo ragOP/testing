@@ -362,7 +362,7 @@ export default function Fifth_SP() {
 
               </div>
               <div className="main-des-5"  style={{marginTop:'-5px'}}>
-              If you have not tested that your DNA is completely safe from these deadly diseases through a high-quality genetic screening, which is zero cost as well - get it done now while it’s still covered under Medicare.
+              If you have not tested that your DNA is completely safe from these deadly diseases through a high-quality genetic screening, which is zero cost as well - <b>get it done now while it’s still covered under Medicare.</b>
               </div>
               {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>

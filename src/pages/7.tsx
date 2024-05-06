@@ -20,6 +20,8 @@ TagManager.initialize(tagManagerArgs);
 
 export default function Fifth_SP() {
 
+  const [delay, setDelay] = useState(false);
+
   const SlideUp = cssTransition({
     enter: "toast-enter",
     exit: "toast-exit",
@@ -51,7 +53,7 @@ export default function Fifth_SP() {
     // Make the word "Allowance" bold in all lines
     boldedMessage = boldedMessage.replace(
       /\$3,600 Grocery Allowance/g,
-      '<strong class="green-bold">$3,600 Grocery Allowance</strong>'
+      '<strong class="green-bold">Genetic Test Kit</strong>'
     );
   
     // Make specific dollar amounts bold only in specific lines
@@ -76,6 +78,13 @@ export default function Fifth_SP() {
       closeButton: false,
     });
   };
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDelay(true);
+    }, 40000); 
+    return () => clearTimeout(timeoutId);
+  }, []);
   
   useEffect(() => {
     const delayedEffect = setTimeout(() => {
@@ -336,10 +345,10 @@ export default function Fifth_SP() {
 
   return (
     <div>
-     <ToastContainer />
+     {delay && <ToastContainer />}
      <div style={{marginBottom:'4px', overflow: 'hidden'}} className="top-sticky-blue-test2" id="top">
-  <div style={{animation: 'scroll-left 15s linear infinite'}}>
-    Over 2.1 Million+ Kits Delivered (Gap) Zero Cost Under Medicare
+  <div className="animate">
+    Over 2.1 Million+ Kits Delivered <span style={{"marginLeft": "60px"}}>Zero Cost Under Medicare</span>
   </div>
 </div>
 
@@ -422,7 +431,7 @@ export default function Fifth_SP() {
         </div>
         {/* <p>{zipCode} </p> */}
       </div>
-      <ToastContainer
+      {delay && <ToastContainer
         position="bottom-right"
         autoClose={5000}
         newestOnTop={false}
@@ -431,7 +440,7 @@ export default function Fifth_SP() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />
+      />}
     </div>
   );
 }

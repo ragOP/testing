@@ -11,6 +11,34 @@ a{
  
 }
 
+.animate {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+.animate span.cost {
+  display: inline-block;
+  margin-left: 60px;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate {
+  animation: move 10s linear infinite;
+}
+
+
   .top-sticky{
     padding: 0.75rem;
     background-color: rgb(220 38 38);
@@ -275,8 +303,9 @@ a{
   }
   
   .survey{
-    padding: 1rem;
-    // margin-top: 1rem;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid blue;
   }
   
   .quiz{
@@ -697,7 +726,10 @@ a{
       line-height: 2rem;
     }
     .survey{
-      padding: 0;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-bottom: 5px solid blue;
+      border-radius: 10px;
     }
     .answer-btn-5{
       font-size: 1.5rem;

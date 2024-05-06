@@ -348,7 +348,7 @@ export default function Fifth_SP() {
      {delay && <ToastContainer />}
      <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
   <div className="animate">
-    Over 2.1 Million+ Kits Delivered <span style={{"paddingLeft": "120px"}}>Zero Cost Under Medicare</span>
+    Over 2.1 Million+ Kits Delivered <span style={{"paddingLeft": "250px"}}>Zero Cost Under Medicare</span>
   </div>
 </div>
 

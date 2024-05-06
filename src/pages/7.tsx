@@ -337,9 +337,13 @@ export default function Fifth_SP() {
   return (
     <div>
      <ToastContainer />
-      <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
-      Senior's Allowance Program 2024
-      </div>
+     <div style={{marginBottom:'4px', overflow: 'hidden'}} className="top-sticky-blue-test2" id="top">
+  <div style={{animation: 'scroll-left 15s linear infinite'}}>
+    Over 2.1 Million+ Kits Delivered (Gap) Zero Cost Under Medicare
+  </div>
+</div>
+
+
       {step === "process" ? (
         <>
           <div className="main-container-5">
@@ -358,11 +362,11 @@ export default function Fifth_SP() {
               {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
               <img className="topic-img-middle-z" src={Head_bg} alt="head" />
               <div  style={{marginTop:'14px'}}className="main-des-5">
-              Americans over 65 years old can claim their Genetic Screening at Zero Cost to see if their “genes” contain any dormant life-threatening diseases like cancer, type-1 Diabetes, Anemia, Alzheimer's, Rheumatoid Arthritis, and ANY other disorders.
+              Receive your Genetic Test Kit for zero cost if you're over 65 years old, allowing you to detect potential life-threatening diseases such as cancer, type-1 diabetes, anemia, Alzheimer's, rheumatoid arthritis, and a wide range of other disorders.
 
               </div>
               <div className="main-des-5"  style={{marginTop:'-5px'}}>
-              If you have not tested that your DNA is completely safe from these deadly diseases through a high-quality genetic screening, which is zero cost as well - <b>get it done now while it’s still covered under Medicare.</b>
+              If you have not tested that your body is completely safe from these deadly diseases through  high-quality genetic screening, which is zero cost as well - <b>get it done now while it’s still covered under Medicare.</b>
               </div>
               {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>

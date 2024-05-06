@@ -30,6 +30,12 @@ a{
   0% {
     transform: translateX(100%);
   }
+  33.33% {
+    transform: translateX(0%);
+  }
+  66.66% {
+    transform: translateX(-100%);
+  }
   100% {
     transform: translateX(-200%);
   }
@@ -38,6 +44,7 @@ a{
 .animate {
   animation: move 10s linear infinite;
 }
+
 
 
   .top-sticky{

@@ -347,9 +347,12 @@ export default function Fifth_SP() {
     <div>
      {delay && <ToastContainer />}
      <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
-  <div className="animate">
-    Over 2.1 Million+ Kits Delivered <span style={{"paddingLeft": "250px"}}>Zero Cost Under Medicare</span>
-  </div>
+     <div className="animate">
+  <span style={{"paddingLeft": "100px"}}>Over 2,102,432 Kits Delivered Till Date</span> 
+  <span style={{"paddingLeft": "100px"}}>Zero Cost Under Medicare Plan B</span> 
+  <span style={{"paddingLeft": "100px"}}>Last day to claim your Zero Cost Genetic Test Kit</span>
+</div>
+
 </div>
 
 

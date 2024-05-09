@@ -36,7 +36,7 @@ a{
 }
 
 .animate {
-  animation: move 10s linear infinite;
+  animation: move 14s linear infinite;
 }
 
 
@@ -87,7 +87,7 @@ a{
   }
   .top-sticky-blue-test2 {
     padding: 0.75rem 16rem;
-    background:linear-gradient(45deg, #3F84E3, #ED187A);;
+    background:linear-gradient(45deg, #002F96, #5E17EB);;
     color: rgb(255, 255, 255);
     font-size: 1rem;
     font-weight: 800;
@@ -184,9 +184,14 @@ a{
     margin-top: 0.5rem;
   }
   .topic-img-middle-z{
-    margin-left: 11%;
+    margin-left: 2;
     margin-top: -6px;
-    width: 80%;
+    width: 100%;
+  }
+  .topic-img-middle-za{
+    margin-left: 20%;
+    margin-top: -6px;
+    width: 60%;
   }
   .topic-img-middle-test{
     width: 70%;

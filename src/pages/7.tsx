@@ -361,7 +361,7 @@ export default function Fifth_SP() {
         <>
           <div className="main-container-5">
             <div className="main-descrition-5-5">
-               <img className="topic-img-middle-z" src={abba} alt="head" />
+               <img className="topic-img-middle-za" src={abba} alt="head" />
               <div className="main-des-title-6-7">
                 <b>
                Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!
@@ -376,11 +376,11 @@ export default function Fifth_SP() {
               {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
               <img className="topic-img-middle-z" src={Head_bg} alt="head" />
               <div  style={{marginTop:'14px'}}className="main-des-5">
-              Receive your Genetic Test Kit for No cost if you're over 65 years old, allowing you to detect potential life-threatening diseases such as cancer, type-1 diabetes, anemia, Alzheimer's, rheumatoid arthritis, and a wide range of other disorders.
+              Receive your Genetic Test Kit at No cost if you're over 65 years or older, allowing you to detect potential life-threatening diseases such as cancer, diabetes, anemia, alzheimer’s, arthritis, and a wide range of other disorders.
 
               </div>
               <div className="main-des-5"  style={{marginTop:'-5px'}}>
-              If you have not tested that your body is completely safe from these deadly diseases through  high-quality genetic screening, which is No cost as well - <b>get it done now while it’s still covered under Medicare.</b>
+              If you have not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered un</b>
               </div>
               {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>
@@ -405,7 +405,7 @@ export default function Fifth_SP() {
         </div>
       ) : (
         <div className="checking">
-          <div className="congrats">Congratulation, You Qualify!</div>
+          <div className="congrats">Congratulations, You Qualify!</div>
           <div className="top-description-5">
             Make A <b>Quick Call</b> Claim Your No Cost Genetic Screening Kit.
             

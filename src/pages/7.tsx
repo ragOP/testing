@@ -349,8 +349,8 @@ export default function Fifth_SP() {
      <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
      <div className="animate">
   <span style={{"paddingLeft": "100px"}}>Over 2,102,432 Kits Delivered Till Date</span> 
-  <span style={{"paddingLeft": "100px"}}>Zero Cost Under Medicare Plan B</span> 
-  <span style={{"paddingLeft": "100px"}}>Last day to claim your Zero Cost Genetic Test Kit</span>
+  <span style={{"paddingLeft": "100px"}}>No Cost Under Medicare Plan B</span> 
+  <span style={{"paddingLeft": "100px"}}>Last day to claim your No Cost Genetic Test Kit</span>
 </div>
 
 </div>
@@ -362,7 +362,7 @@ export default function Fifth_SP() {
             <div className="main-descrition-5-5">
               <div className="main-des-title-6-7">
                 <b>
-               Americans Over 65 Can Now Qualify For Genetic Screening at Zero Cost!
+               Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!
 
 
 
@@ -374,11 +374,11 @@ export default function Fifth_SP() {
               {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
               <img className="topic-img-middle-z" src={Head_bg} alt="head" />
               <div  style={{marginTop:'14px'}}className="main-des-5">
-              Receive your Genetic Test Kit for zero cost if you're over 65 years old, allowing you to detect potential life-threatening diseases such as cancer, type-1 diabetes, anemia, Alzheimer's, rheumatoid arthritis, and a wide range of other disorders.
+              Receive your Genetic Test Kit for No cost if you're over 65 years old, allowing you to detect potential life-threatening diseases such as cancer, type-1 diabetes, anemia, Alzheimer's, rheumatoid arthritis, and a wide range of other disorders.
 
               </div>
               <div className="main-des-5"  style={{marginTop:'-5px'}}>
-              If you have not tested that your body is completely safe from these deadly diseases through  high-quality genetic screening, which is zero cost as well - <b>get it done now while it’s still covered under Medicare.</b>
+              If you have not tested that your body is completely safe from these deadly diseases through  high-quality genetic screening, which is No cost as well - <b>get it done now while it’s still covered under Medicare.</b>
               </div>
               {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>
@@ -405,7 +405,7 @@ export default function Fifth_SP() {
         <div className="checking">
           <div className="congrats">Congratulation, You Qualify!</div>
           <div className="top-description-5">
-            Make A <b>Quick Call</b> Claim Your Zero Cost Genetic Screening Kit.
+            Make A <b>Quick Call</b> Claim Your No Cost Genetic Screening Kit.
             
           </div>
           <div className="spots-count">Spots remaining: 4</div>

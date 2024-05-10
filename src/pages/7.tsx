@@ -407,7 +407,7 @@ export default function Fifth_SP() {
         <div className="checking">
           <div className="congrats">Congratulations, You Qualify!</div>
           <div className="top-description-5">
-            Make A <b>Quick Call</b> Claim Your No Cost Genetic Screening Kit.
+            Make A <b>Quick Call to </b> Claim Your No Cost Genetic Screening Kit.
             
           </div>
           <div className="spots-count">Spots remaining: 4</div>

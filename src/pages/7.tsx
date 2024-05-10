@@ -205,7 +205,7 @@ export default function Fifth_SP() {
     });
   };
 
-  const [quiz, setQuiz] = useState("1. Do you have any personal and family history of chronic diseases?  ");
+  const [quiz, setQuiz] = useState("1. Do you have any personal or family history of chronic diseases?  ");
   const [step, setStep] = useState("process");
   const [min, setMin] = useState(3);
   const [second, setSecond] = useState<any>(0);
@@ -276,7 +276,7 @@ export default function Fifth_SP() {
 
   const handleQuizP = () => {
     topScroll("btn");
-    if (quiz === "1. Do you have any personal and family history of chronic diseases?  ") {
+    if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
       setQuiz("2. Is medicare your primary insurance?");
@@ -380,7 +380,7 @@ export default function Fifth_SP() {
 
               </div>
               <div className="main-des-5"  style={{marginTop:'-5px'}}>
-              If you have not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered un</b>
+              If you have not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered under Medicare.</b>
               </div>
               {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>

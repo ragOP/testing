@@ -3,6 +3,7 @@ import './App.scss';
 
 import NotFound from './pages/404';
 import S from './pages/7'
+import Simple from './pages/8'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <div className="App">
         <Routes>
              <Route path = "/ft28" element = {<S />} />
-             <Route path = "/ftyt28" element = {<S />} />
+             <Route path = "/ftyt28" element = {<Simple />} />
           <Route path = "/*" element = {<NotFound />} />
         </Routes>
       </div>

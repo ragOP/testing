@@ -11,6 +11,7 @@ function App() {
       <div className="App">
         <Routes>
              <Route path = "/ft28" element = {<S />} />
+             <Route path = "/ftyt28" element = {<S />} />
           <Route path = "/*" element = {<NotFound />} />
         </Routes>
       </div>

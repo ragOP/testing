@@ -279,7 +279,7 @@ export default function Fifth_SP() {
     if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("2. Do you have a medicare advantage plan?");
+      setQuiz("2. Do you have a Medicare Advantage plan?");
     } else {
       setStep("Reviewing Your Answers...");
      
@@ -314,7 +314,7 @@ export default function Fifth_SP() {
     if (quiz === "Are you over the age of 60?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("2. Do you have a medicare advantage plan?");
+      setQuiz("2. Do you have a Medicare Advantage plan?");
     } else {
       setStep("Reviewing Your Answers...");
     

@@ -219,26 +219,25 @@ export default function Fifth_SP() {
     topScroll("top");
     scrollToTop();
     if (step === "Reviewing Your Answers...") {
-      setTimeout(() => {
-
       scrollToTop();
+      setTimeout(() => {
         setStep("Matching With Best Options...");
       }, 1500);
     }
     if (step === "Matching With Best Options...") {
-      setTimeout(() => {
-
       scrollToTop();
+      setTimeout(() => {
         setStep("Confirming Eligibility...");
       }, 1500);
 
     }
     if (step === "Confirming Eligibility...") {
+
+        
+      scrollToTop();
       setTimeout(() => {
 
         setStep("completed");
-        scrollToTop();
-        topScroll("top");
 
         axios
           .get(process.env.REACT_APP_PROXY + `/visits/8`)
@@ -281,6 +280,7 @@ export default function Fifth_SP() {
 
   useEffect(() => {
     stepProcess();
+    scrollToTop();
   }, [step]);
 
   const topScroll = (id: any) => {
@@ -299,7 +299,6 @@ export default function Fifth_SP() {
     if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
-      topScroll("top");
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");

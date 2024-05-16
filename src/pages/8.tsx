@@ -217,19 +217,27 @@ export default function Fifth_SP() {
 
   const stepProcess = () => {
     topScroll("top");
+    scrollToTop();
     if (step === "Reviewing Your Answers...") {
       setTimeout(() => {
+
+      scrollToTop();
         setStep("Matching With Best Options...");
       }, 1500);
     }
     if (step === "Matching With Best Options...") {
       setTimeout(() => {
+
+      scrollToTop();
         setStep("Confirming Eligibility...");
       }, 1500);
+
     }
     if (step === "Confirming Eligibility...") {
       setTimeout(() => {
+
         setStep("completed");
+        scrollToTop();
         topScroll("top");
 
         axios

@@ -304,6 +304,7 @@ export default function Fifth_SP() {
     } else {
       setStep("Reviewing Your Answers...");
       topScroll("top");
+      scrollToTop();
     }
 
     axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {

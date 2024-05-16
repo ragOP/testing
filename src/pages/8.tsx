@@ -362,7 +362,7 @@ export default function Fifth_SP() {
         <>
           <div className="main-container-5">
             <div className="main-descrition-5-5">
-               <img className="topic-img-middle-za" src={abba} alt="head" />
+               <img className="topic-img-middle-za" src={abba} alt="head" style={{marginTop:'5px'}}/>
               <div className="main-des-title-6-7">
                 <b>
                Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!
@@ -376,7 +376,7 @@ export default function Fifth_SP() {
               </div>
               {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
               <img className="topic-img-middle-z" src={Head_bg} alt="head" />
-              <div  style={{marginTop:'14px'}}className="main-des-5">
+              <div  style={{marginTop:'22px'}}className="main-des-5">
               Receive your Genetic Test Kit at No cost if you're over 65 years or older, allowing you to detect potential life-threatening diseases such as cancer, diabetes, anemia, alzheimer’s, arthritis, and a wide range of other disorders.
 
               </div>
@@ -385,11 +385,11 @@ export default function Fifth_SP() {
               </div>
               {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>
-            <div style={{marginTop:'-5px'}} className="survey">
+            <div style={{marginTop:'9px'}} className="survey">
 
               <div className="quiz-5" id="btn">
               {quiz === "2.  Do you have a Original Medicare Red White and Blue card?" && (
-          <img className="topic-img-middle-zaa" src={abc} alt="head"  style={{ borderRadius: '10px' }} />
+          <img className="topic-img-middle-zaa" src={abc} alt="head"  style={{ borderRadius: '10px',marginBottom:'5px' }} />
         )}
                 {quiz}
               </div>

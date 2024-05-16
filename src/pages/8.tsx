@@ -385,55 +385,55 @@ export default function Fifth_SP() {
 
 
 {step === "process" ? (
-  <>
-    <div className="main-container-5">
-      <div className="main-description-5-5">
-        <img
-          className="topic-img-middle-za"
-          src={abba}
-          alt="head"
-          style={{ marginTop: "5px" }}
-        />
-        <div className="main-des-title-6-7" style={{ marginTop: "2px" }}>
-          <b>Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!</b>
-        </div>
-        <img className="topic-img-middle-z" src={Head_bg} alt="head" />
-        <div style={{ marginTop: "22px" }} className="main-des-5">
-          Receive your Genetic Test Kit at No cost if you're over 65 years or older, allowing you to detect potential life-threatening diseases such as cancer, diabetes, anemia, Alzheimer’s, arthritis, and a wide range of other disorders.
-        </div>
-        <div className="main-des-5" style={{ marginTop: "-5px" }}>
-          If you have ft28not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered under Medicare.</b>
-        </div>
-      </div>
-      <div style={{ marginTop: "9px" }} className="survey">
-        <div className="quiz-5" id="btn">
-          {quiz === "2. Do you have an Original Medicare Red White and Blue card?" && (
-            <img
-              className="topic-img-middle-zaa"
-              src={abc}
-              alt="head"
-              style={{ borderRadius: "10px", marginBottom: "5px" }}
-            />
-          )}
-          {quiz}
-        </div>
-        <div className="answer">
-          <div className="answer-btn-5" onClick={handleQuizP}>
-            {yes}
+        <>
+          <div className="main-container-5">
+            <div className="main-descrition-5-5">
+               <img className="topic-img-middle-za" src={abba} alt="head" style={{marginTop:'5px'}}/>
+              <div className="main-des-title-6-7" style={{marginTop:'2px'}}>
+                <b>
+               Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!
+
+
+
+
+
+
+                </b> 
+              </div>
+              {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
+              <img className="topic-img-middle-z" src={Head_bg} alt="head" />
+              <div  style={{marginTop:'22px'}}className="main-des-5">
+              Receive your Genetic Test Kit at No cost if you're over 65 years or older, allowing you to detect potential life-threatening diseases such as cancer, diabetes, anemia, alzheimer’s, arthritis, and a wide range of other disorders.
+
+              </div>
+              <div className="main-des-5"  style={{marginTop:'-5px'}}>
+              If you have not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered under Medicare.</b>
+              </div>
+              {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
+            </div>
+            <div style={{marginTop:'9px'}} className="survey">
+
+              <div className="quiz-5" id="btn">
+              {quiz === "2.  Do you have a Original Medicare Red White and Blue card?" && (
+          <img className="topic-img-middle-zaa" src={abc} alt="head"  style={{ borderRadius: '10px',marginBottom:'5px' }} />
+        )}
+                {quiz}
+              </div>
+              <div  className="answer">
+                <div className="answer-btn-5" onClick={handleQuizP}>
+              {yes}
+                </div>
+                <div className="answer-btn-5" onClick={handleQuizN}>
+              {no}
+                </div>
+                {quiz === "2.  Do you have a Original Medicare Red White and Blue card?" && (
+          <p style={{"color": "red"}}>If you have a plan with Humana, Cigna, Aetna, etc you DO NOT Qualify!</p>
+        )}
+              </div>
+            </div>
           </div>
-          <div className="answer-btn-5" onClick={handleQuizN}>
-            {no}
-          </div>
-          {quiz === "2. Do you have an Original Medicare Red White and Blue card?" && (
-            <p style={{ color: "red" }}>
-              If you have a plan with Humana, Cigna, Aetna, etc you DO NOT Qualify!
-            </p>
-          )}
-        </div>
-      </div>
-    </div>
-  </>
-) : step !== "process" && step !== "completed" ? (
+        </>
+      )  : step !== "process" && step !== "completed" ? (
   <div className="checking" style={{ fontWeight: "700" }}>
     {step}
   </div>

@@ -22,6 +22,8 @@ TagManager.initialize(tagManagerArgs);
 
 export default function Fifth_SP() {
 
+
+
   const [delay, setDelay] = useState(false);
 
   const SlideUp = cssTransition({
@@ -221,24 +223,17 @@ export default function Fifth_SP() {
   const [yes,setYes]=useState("YES")
   const [no,setNo]=useState("NO")
   const [eligible, setEligible] = useState(true);
-
-
-  if(step !== "process" && step !== "completed"){
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }
   
   const stepProcess = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    if(step === " "){
+      setTimeout(() => {
+        setStep("Reviewing Your Answers...");
+      }, 1500);
+    }
     if (step === "Reviewing Your Answers...") {
       setTimeout(() => {
         setStep("Matching With Best Options...");
-      }, 2500);
+      }, 1500);
     }
     if (step === "Matching With Best Options...") {
       setTimeout(() => {
@@ -277,7 +272,6 @@ export default function Fifth_SP() {
     }
 
     if (step === "completed") {
-      scrollToTop();
       const startTime: any = new Date();
       const timer = setInterval(() => {
         const nowTime: any = new Date();
@@ -293,13 +287,18 @@ export default function Fifth_SP() {
     stepProcess();
   }, [step]);
 
-  useEffect(() => {
-    scrollToTop();
-  }, [eligible]);
-
   const topScroll = (id: any) => {
     scrollTo({ id });
   };
+
+
+  useEffect(() => {
+    console.log("Scrollingggg")
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [step, eligible]);
 
 
 
@@ -311,8 +310,7 @@ export default function Fifth_SP() {
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setEligible(true);
-      setStep("Reviewing Your Answers...");
-      scrollToTop();
+      setStep(" ");
     }
 
     axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {
@@ -348,8 +346,11 @@ export default function Fifth_SP() {
     }
     else {
       setEligible(false);
-      setStep("Reviewing Your Answers...");
-      scrollToTop();
+      setStep(" ");
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth', // Smooth scroll
+      });
     }
 
     axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {

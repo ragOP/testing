@@ -213,6 +213,7 @@ export default function Fifth_SP() {
   const [second, setSecond] = useState<any>(0);
   const [yes,setYes]=useState("YES")
   const [no,setNo]=useState("NO")
+  const [eligible, setEligible] = useState(true);
   
 
   const stepProcess = () => {
@@ -302,6 +303,7 @@ export default function Fifth_SP() {
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       scrollToTop();
+      setEligible(true);
       setStep("Reviewing Your Answers...");
       topScroll("top");
       scrollToTop();
@@ -337,13 +339,10 @@ export default function Fifth_SP() {
       setNo("No")
       topScroll("top");
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
-    } else if(quiz === "2.  Do you have a Original Medicare Red White and Blue card?"){
-      setNo("true");
-      setStep("Reviewing Your Answers...");
-      scrollToTop();
     }
     else {
       scrollToTop();
+      setEligible(false);
       setStep("Reviewing Your Answers...");
       scrollToTop();
       topScroll("top");
@@ -403,7 +402,7 @@ export default function Fifth_SP() {
           Receive your Genetic Test Kit at No cost if you're over 65 years or older, allowing you to detect potential life-threatening diseases such as cancer, diabetes, anemia, Alzheimer’s, arthritis, and a wide range of other disorders.
         </div>
         <div className="main-des-5" style={{ marginTop: "-5px" }}>
-          If you have not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered under Medicare.</b>
+          If you have ft28not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered under Medicare.</b>
         </div>
       </div>
       <div style={{ marginTop: "9px" }} className="survey">
@@ -439,6 +438,8 @@ export default function Fifth_SP() {
     {step}
   </div>
 ) : (
+  <div>
+    {eligible ? (
   <div className="checking">
     <div className="congrats">Congratulations, You Qualify!</div>
     <div className="top-description-5">
@@ -463,6 +464,12 @@ export default function Fifth_SP() {
       <div className="timer-cell">:</div>
       <div className="timer-cell">{second}</div>
     </div>
+  </div>
+    ) : (
+      <div className="checking">
+        Sorry, You're not eligible!
+      </div>
+    )}
   </div>
 )}
 

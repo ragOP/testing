@@ -346,7 +346,7 @@ export default function Fifth_SP() {
 
   return (
     <div>
-     {delay && <ToastContainer />}
+     {/* {delay && <ToastContainer />} */}
      <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
      <div className="animate">
   <span style={{"paddingLeft": "100px"}}>Over 2,102,432 Kits Delivered Till Date</span> 
@@ -363,7 +363,7 @@ export default function Fifth_SP() {
             <div className="main-descrition-5-5">
                <img className="topic-img-middle-za" src={abba} alt="head" />
               <div className="main-des-title-6-7">
-                <b>
+                {/* <b>
                Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!
 
 
@@ -371,7 +371,7 @@ export default function Fifth_SP() {
 
 
 
-                </b>
+                </b> */}
               </div>
               {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
               <img className="topic-img-middle-z" src={Head_bg} alt="head" />
@@ -436,7 +436,7 @@ export default function Fifth_SP() {
         </div>
         {/* <p>{zipCode} </p> */}
       </div>
-      {delay && <ToastContainer
+      {/* {delay && <ToastContainer
         position="bottom-right"
         autoClose={5000}
         newestOnTop={false}
@@ -445,7 +445,7 @@ export default function Fifth_SP() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />}
+      />} */}
     </div>
   );
 }

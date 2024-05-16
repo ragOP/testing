@@ -39,6 +39,7 @@ export default function Fifth_SP() {
   
   // Function to shuffle array in place
   const shuffleArray = (array:any) => {
+
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -215,6 +216,7 @@ export default function Fifth_SP() {
   
 
   const stepProcess = () => {
+    topScroll("top");
     if (step === "Reviewing Your Answers...") {
       setTimeout(() => {
         setStep("Matching With Best Options...");
@@ -228,6 +230,7 @@ export default function Fifth_SP() {
     if (step === "Confirming Eligibility...") {
       setTimeout(() => {
         setStep("completed");
+        topScroll("top");
 
         axios
           .get(process.env.REACT_APP_PROXY + `/visits/8`)
@@ -256,6 +259,7 @@ export default function Fifth_SP() {
     }
 
     if (step === "completed") {
+      scrollToTop();
       const startTime: any = new Date();
       const timer = setInterval(() => {
         const nowTime: any = new Date();
@@ -275,15 +279,22 @@ export default function Fifth_SP() {
     scrollTo({ id });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scroll
+    });
+  };
+
   const handleQuizP = () => {
     topScroll("btn");
     if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
+      topScroll("top");
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");
-     
       topScroll("top");
     }
 
@@ -315,6 +326,7 @@ export default function Fifth_SP() {
     if (quiz === "Are you over the age of 60?  ") {
       setYes("Yes")
       setNo("No")
+      topScroll("top");
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");

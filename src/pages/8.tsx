@@ -279,7 +279,7 @@ export default function Fifth_SP() {
     if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("2. Is medicare your primary insurance?");
+      setQuiz("Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");
      
@@ -314,7 +314,7 @@ export default function Fifth_SP() {
     if (quiz === "Are you over the age of 60?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("2. Is medicare your primary insurance?");
+      setQuiz("Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");
     
@@ -347,14 +347,14 @@ export default function Fifth_SP() {
   return (
     <div>
      {/* {delay && <ToastContainer />} */}
-     <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
+     {/* <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
      <div className="animate">
   <span style={{"paddingLeft": "100px"}}>Over 2,102,432 Kits Delivered Till Date</span> 
   <span style={{"paddingLeft": "100px"}}>No Cost Under Medicare Plan B</span> 
   <span style={{"paddingLeft": "100px"}}>Last day to claim your No Cost Genetic Test Kit</span>
 </div>
 
-</div>
+</div> */}
 
 
       {step === "process" ? (

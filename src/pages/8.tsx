@@ -280,7 +280,7 @@ export default function Fifth_SP() {
     if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("Do you have a Original Medicare Red White and Blue card?");
+      setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");
      
@@ -315,7 +315,7 @@ export default function Fifth_SP() {
     if (quiz === "Are you over the age of 60?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("Do you have a Original Medicare Red White and Blue card?");
+      setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");
     
@@ -388,7 +388,7 @@ export default function Fifth_SP() {
             <div style={{marginTop:'-5px'}} className="survey">
 
               <div className="quiz-5" id="btn">
-              {quiz === "Do you have a Original Medicare Red White and Blue card?" && (
+              {quiz === "2.  Do you have a Original Medicare Red White and Blue card?" && (
           <img className="topic-img-middle-zaa" src={abc} alt="head"  style={{ borderRadius: '10px' }} />
         )}
                 {quiz}

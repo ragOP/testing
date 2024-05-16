@@ -412,6 +412,9 @@ export default function Fifth_SP() {
                 <div className="answer-btn-5" onClick={handleQuizN}>
               {no}
                 </div>
+              {quiz === "2.  Do you have a Original Medicare Red White and Blue card?" && (
+          <p>If you have a plan with Humana, Cigna, Aetna, etc you DO NOT Qualify!</p>
+        )}
               </div>
             </div>
           </div>

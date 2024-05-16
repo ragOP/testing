@@ -9,6 +9,7 @@ import { ToastContainer, toast, cssTransition } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head_bg from "../assets/body.png";
 import abba from "../assets/abba.png";
+import abc from "../assets/abc.jpeg";
 import Headline from "../assets/headline_spandeb1.png";
 
 // google tag manager
@@ -38,6 +39,7 @@ export default function Fifth_SP() {
   
   // Function to shuffle array in place
   const shuffleArray = (array:any) => {
+
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -214,6 +216,7 @@ export default function Fifth_SP() {
   
 
   const stepProcess = () => {
+    topScroll("top");
     if (step === "Reviewing Your Answers...") {
       setTimeout(() => {
         setStep("Matching With Best Options...");
@@ -227,6 +230,7 @@ export default function Fifth_SP() {
     if (step === "Confirming Eligibility...") {
       setTimeout(() => {
         setStep("completed");
+        topScroll("top");
 
         axios
           .get(process.env.REACT_APP_PROXY + `/visits/8`)
@@ -255,6 +259,7 @@ export default function Fifth_SP() {
     }
 
     if (step === "completed") {
+      scrollToTop();
       const startTime: any = new Date();
       const timer = setInterval(() => {
         const nowTime: any = new Date();
@@ -274,15 +279,22 @@ export default function Fifth_SP() {
     scrollTo({ id });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scroll
+    });
+  };
+
   const handleQuizP = () => {
     topScroll("btn");
     if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("2. Do you have a Medicare Advantage plan?");
+      topScroll("top");
+      setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");
-     
       topScroll("top");
     }
 
@@ -314,7 +326,8 @@ export default function Fifth_SP() {
     if (quiz === "Are you over the age of 60?  ") {
       setYes("Yes")
       setNo("No")
-      setQuiz("2. Do you have a Medicare Advantage plan?");
+      topScroll("top");
+      setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");
     
@@ -346,23 +359,23 @@ export default function Fifth_SP() {
 
   return (
     <div>
-     {delay && <ToastContainer />}
-     <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
+     {/* {delay && <ToastContainer />} */}
+     {/* <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
      <div className="animate">
   <span style={{"paddingLeft": "100px"}}>Over 2,102,432 Kits Delivered Till Date</span> 
   <span style={{"paddingLeft": "100px"}}>No Cost Under Medicare Plan B</span> 
   <span style={{"paddingLeft": "100px"}}>Last day to claim your No Cost Genetic Test Kit</span>
 </div>
 
-</div>
+</div> */}
 
 
       {step === "process" ? (
         <>
           <div className="main-container-5">
             <div className="main-descrition-5-5">
-               <img className="topic-img-middle-za" src={abba} alt="head" />
-              <div className="main-des-title-6-7">
+               <img className="topic-img-middle-za" src={abba} alt="head" style={{marginTop:'5px'}}/>
+              <div className="main-des-title-6-7" style={{marginTop:'2px'}}>
                 <b>
                Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!
 
@@ -371,11 +384,11 @@ export default function Fifth_SP() {
 
 
 
-                </b>
+                </b> 
               </div>
               {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
               <img className="topic-img-middle-z" src={Head_bg} alt="head" />
-              <div  style={{marginTop:'14px'}}className="main-des-5">
+              <div  style={{marginTop:'22px'}}className="main-des-5">
               Receive your Genetic Test Kit at No cost if you're over 65 years or older, allowing you to detect potential life-threatening diseases such as cancer, diabetes, anemia, alzheimer’s, arthritis, and a wide range of other disorders.
 
               </div>
@@ -384,8 +397,12 @@ export default function Fifth_SP() {
               </div>
               {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>
-            <div style={{marginTop:'-5px'}} className="survey">
+            <div style={{marginTop:'9px'}} className="survey">
+
               <div className="quiz-5" id="btn">
+              {quiz === "2.  Do you have a Original Medicare Red White and Blue card?" && (
+          <img className="topic-img-middle-zaa" src={abc} alt="head"  style={{ borderRadius: '10px',marginBottom:'5px' }} />
+        )}
                 {quiz}
               </div>
               <div  className="answer">
@@ -395,6 +412,9 @@ export default function Fifth_SP() {
                 <div className="answer-btn-5" onClick={handleQuizN}>
               {no}
                 </div>
+                {quiz === "2.  Do you have a Original Medicare Red White and Blue card?" && (
+          <p>If you have a plan with Humana, Cigna, Aetna, etc you DO NOT Qualify!</p>
+        )}
               </div>
             </div>
           </div>
@@ -411,6 +431,9 @@ export default function Fifth_SP() {
             
           </div>
           <div className="spots-count">Spots remaining: 4</div>
+          <div className="sub-description">
+          If you DO NOT have an Original Medicare Red White And Blue Card you can not qualify!
+          </div>
           <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
           <a href="tel:+18884790972">
             <div className="call-btn" onClick={handleCall}>
@@ -436,7 +459,7 @@ export default function Fifth_SP() {
         </div>
         {/* <p>{zipCode} </p> */}
       </div>
-      {delay && <ToastContainer
+      {/* {delay && <ToastContainer
         position="bottom-right"
         autoClose={5000}
         newestOnTop={false}
@@ -445,7 +468,7 @@ export default function Fifth_SP() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />}
+      />} */}
     </div>
   );
 }

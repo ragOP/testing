@@ -217,25 +217,18 @@ export default function Fifth_SP() {
   
 
   const stepProcess = () => {
-    topScroll("top");
     scrollToTop();
     if (step === "Reviewing Your Answers...") {
-      scrollToTop();
       setTimeout(() => {
         setStep("Matching With Best Options...");
       }, 1500);
     }
     if (step === "Matching With Best Options...") {
-      scrollToTop();
       setTimeout(() => {
         setStep("Confirming Eligibility...");
       }, 1500);
-
     }
     if (step === "Confirming Eligibility...") {
-
-        
-      scrollToTop();
       setTimeout(() => {
 
         setStep("completed");
@@ -281,8 +274,11 @@ export default function Fifth_SP() {
 
   useEffect(() => {
     stepProcess();
-    scrollToTop();
   }, [step]);
+
+  useEffect(() => {
+    scrollToTop();
+  }, [eligible]);
 
   const topScroll = (id: any) => {
     scrollTo({ id });
@@ -291,7 +287,7 @@ export default function Fifth_SP() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Smooth scroll
+      behavior: 'smooth',
     });
   };
 
@@ -302,10 +298,8 @@ export default function Fifth_SP() {
       setNo("No")
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
-      scrollToTop();
       setEligible(true);
       setStep("Reviewing Your Answers...");
-      topScroll("top");
       scrollToTop();
     }
 
@@ -341,11 +335,9 @@ export default function Fifth_SP() {
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     }
     else {
-      scrollToTop();
       setEligible(false);
       setStep("Reviewing Your Answers...");
       scrollToTop();
-      topScroll("top");
     }
 
     axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {

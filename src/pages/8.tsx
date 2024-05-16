@@ -228,7 +228,7 @@ export default function Fifth_SP() {
     if(step === " "){
       setTimeout(() => {
         setStep("Reviewing Your Answers...");
-      }, 1500);
+      }, 2000);
     }
     if (step === "Reviewing Your Answers...") {
       setTimeout(() => {
@@ -440,7 +440,7 @@ export default function Fifth_SP() {
           </div>
         </>
       )  : step !== "process" && step !== "completed" ? (
-  <div className="checking" style={{ fontWeight: "700" }}>
+        <div className={step !== " " ? "checking" : ""} style={{ fontWeight: "700" }}>
     {step}
   </div>
 ) : (

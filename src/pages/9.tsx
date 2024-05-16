@@ -22,6 +22,8 @@ TagManager.initialize(tagManagerArgs);
 
 export default function Fifth_SP() {
 
+
+
   const [delay, setDelay] = useState(false);
 
   const SlideUp = cssTransition({
@@ -88,6 +90,13 @@ export default function Fifth_SP() {
     }, 40000); 
     return () => clearTimeout(timeoutId);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   
   useEffect(() => {
     const delayedEffect = setTimeout(() => {
@@ -215,27 +224,23 @@ export default function Fifth_SP() {
   const [no,setNo]=useState("NO")
   const [eligible, setEligible] = useState(true);
   
-
   const stepProcess = () => {
-    topScroll("top");
-    scrollToTop();
+    if(step === " "){
+      setTimeout(() => {
+        setStep("Reviewing Your Answers...");
+      }, 2000);
+    }
     if (step === "Reviewing Your Answers...") {
-      scrollToTop();
       setTimeout(() => {
         setStep("Matching With Best Options...");
       }, 1500);
     }
     if (step === "Matching With Best Options...") {
-      scrollToTop();
       setTimeout(() => {
         setStep("Confirming Eligibility...");
       }, 1500);
-
     }
     if (step === "Confirming Eligibility...") {
-
-        
-      scrollToTop();
       setTimeout(() => {
 
         setStep("completed");
@@ -267,7 +272,6 @@ export default function Fifth_SP() {
     }
 
     if (step === "completed") {
-      scrollToTop();
       const startTime: any = new Date();
       const timer = setInterval(() => {
         const nowTime: any = new Date();
@@ -281,19 +285,22 @@ export default function Fifth_SP() {
 
   useEffect(() => {
     stepProcess();
-    scrollToTop();
   }, [step]);
 
   const topScroll = (id: any) => {
     scrollTo({ id });
   };
 
-  const scrollToTop = () => {
+
+  useEffect(() => {
+    console.log("Scrollingggg")
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Smooth scroll
+      behavior: 'smooth',
     });
-  };
+  }, [step, eligible]);
+
+
 
   const handleQuizP = () => {
     topScroll("btn");
@@ -302,11 +309,8 @@ export default function Fifth_SP() {
       setNo("No")
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
-      scrollToTop();
       setEligible(true);
-      setStep("Reviewing Your Answers...");
-      topScroll("top");
-      scrollToTop();
+      setStep(" ");
     }
 
     axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {
@@ -341,11 +345,12 @@ export default function Fifth_SP() {
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     }
     else {
-      scrollToTop();
       setEligible(false);
-      setStep("Reviewing Your Answers...");
-      scrollToTop();
-      topScroll("top");
+      setStep(" ");
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth', // Smooth scroll
+      });
     }
 
     axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {
@@ -429,12 +434,13 @@ export default function Fifth_SP() {
                 <div className="answer-btn-5" onClick={handleQuizN}>
               {no}
                 </div>
+                
               </div>
             </div>
           </div>
         </>
       )  : step !== "process" && step !== "completed" ? (
-  <div className="checking" style={{ fontWeight: "700" }}>
+        <div className={step !== " " ? "checking" : ""} style={{ fontWeight: "700" }}>
     {step}
   </div>
 ) : (

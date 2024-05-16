@@ -88,6 +88,13 @@ export default function Fifth_SP() {
     }, 40000); 
     return () => clearTimeout(timeoutId);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   
   useEffect(() => {
     const delayedEffect = setTimeout(() => {
@@ -214,14 +221,24 @@ export default function Fifth_SP() {
   const [yes,setYes]=useState("YES")
   const [no,setNo]=useState("NO")
   const [eligible, setEligible] = useState(true);
-  
 
+
+  if(step !== "process" && step !== "completed"){
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+  
   const stepProcess = () => {
-    scrollToTop();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     if (step === "Reviewing Your Answers...") {
       setTimeout(() => {
         setStep("Matching With Best Options...");
-      }, 1500);
+      }, 2500);
     }
     if (step === "Matching With Best Options...") {
       setTimeout(() => {
@@ -284,12 +301,7 @@ export default function Fifth_SP() {
     scrollTo({ id });
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+
 
   const handleQuizP = () => {
     topScroll("btn");

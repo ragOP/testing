@@ -363,7 +363,7 @@ export default function Fifth_SP() {
           <div className="main-container-5">
             <div className="main-descrition-5-5">
                <img className="topic-img-middle-za" src={abba} alt="head" style={{marginTop:'5px'}}/>
-              <div className="main-des-title-6-7">
+                <div className="main-des-title-6-7" style={{marginTop:'2px'}}>
                 <b>
                Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!
 

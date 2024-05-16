@@ -339,7 +339,7 @@ export default function Fifth_SP() {
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");
-    
+      scrollToTop();
       topScroll("top");
     }
 

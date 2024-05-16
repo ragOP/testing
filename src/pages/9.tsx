@@ -217,13 +217,16 @@ export default function Fifth_SP() {
 
   const stepProcess = () => {
     topScroll("top");
+    scrollToTop();
     if (step === "Reviewing Your Answers...") {
       setTimeout(() => {
+        scrollToTop();
         setStep("Matching With Best Options...");
       }, 1500);
     }
     if (step === "Matching With Best Options...") {
       setTimeout(() => {
+        scrollToTop();
         setStep("Confirming Eligibility...");
       }, 1500);
     }
@@ -231,6 +234,7 @@ export default function Fifth_SP() {
       setTimeout(() => {
         setStep("completed");
         topScroll("top");
+        scrollToTop();
 
         axios
           .get(process.env.REACT_APP_PROXY + `/visits/8`)
@@ -296,6 +300,7 @@ export default function Fifth_SP() {
     } else {
       setStep("Reviewing Your Answers...");
       topScroll("top");
+      scrollToTop();
     }
 
     axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {
@@ -330,7 +335,7 @@ export default function Fifth_SP() {
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
       setStep("Reviewing Your Answers...");
-    
+      scrollToTop();
       topScroll("top");
     }
 

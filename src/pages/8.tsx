@@ -416,6 +416,9 @@ export default function Fifth_SP() {
             
           </div>
           <div className="spots-count">Spots remaining: 4</div>
+          <div className="sub-description">
+          If you DO NOT have an Original Medicare Red White And Blue Card you can not qualify!
+          </div>
           <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
           <a href="tel:+18663380677">
             <div className="call-btn" onClick={handleCall}>

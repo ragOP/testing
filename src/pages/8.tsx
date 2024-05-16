@@ -9,6 +9,7 @@ import { ToastContainer, toast, cssTransition } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head_bg from "../assets/body.png";
 import abba from "../assets/abba.png";
+import mi from "../assets/mi.jpeg";
 import Headline from "../assets/headline_spandeb1.png";
 
 // google tag manager
@@ -385,7 +386,11 @@ export default function Fifth_SP() {
               {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>
             <div style={{marginTop:'-5px'}} className="survey">
+
               <div className="quiz-5" id="btn">
+              {quiz === "Do you have a Original Medicare Red White and Blue card?" && (
+          <img className="topic-img-middle-za" src={mi} alt="head" />
+        )}
                 {quiz}
               </div>
               <div  className="answer">

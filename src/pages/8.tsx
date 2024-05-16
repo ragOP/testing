@@ -301,6 +301,7 @@ export default function Fifth_SP() {
       setNo("No")
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
+      scrollToTop();
       setStep("Reviewing Your Answers...");
       topScroll("top");
       scrollToTop();
@@ -337,6 +338,7 @@ export default function Fifth_SP() {
       topScroll("top");
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
+      scrollToTop();
       setStep("Reviewing Your Answers...");
       scrollToTop();
       topScroll("top");

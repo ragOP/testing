@@ -383,13 +383,13 @@ export default function Fifth_SP() {
               <div className="main-des-5"  style={{marginTop:'-5px'}}>
               If you have not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered under Medicare.</b>
               </div>
-              <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div>
+              {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>
             <div style={{marginTop:'-5px'}} className="survey">
 
               <div className="quiz-5" id="btn">
               {quiz === "Do you have a Original Medicare Red White and Blue card?" && (
-          <img className="topic-img-middle-za" src={mi} alt="head" />
+          <img className="topic-img-middle-za" src={abc} alt="head"  style={{ borderRadius: '10px' }} />
         )}
                 {quiz}
               </div>

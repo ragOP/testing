@@ -9,7 +9,7 @@ import { ToastContainer, toast, cssTransition } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head_bg from "../assets/body.png";
 import abba from "../assets/abba.png";
-import mi from "../assets/abc.jpeg";
+import abc from "../assets/abc.jpeg";
 import Headline from "../assets/headline_spandeb1.png";
 
 // google tag manager
@@ -364,7 +364,7 @@ export default function Fifth_SP() {
             <div className="main-descrition-5-5">
                <img className="topic-img-middle-za" src={abba} alt="head" />
               <div className="main-des-title-6-7">
-                {/* <b>
+                <b>
                Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!
 
 
@@ -372,7 +372,7 @@ export default function Fifth_SP() {
 
 
 
-                </b> */}
+                </b> 
               </div>
               {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
               <img className="topic-img-middle-z" src={Head_bg} alt="head" />
@@ -383,7 +383,7 @@ export default function Fifth_SP() {
               <div className="main-des-5"  style={{marginTop:'-5px'}}>
               If you have not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered under Medicare.</b>
               </div>
-              {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
+              <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div>
             </div>
             <div style={{marginTop:'-5px'}} className="survey">
 

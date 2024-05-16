@@ -213,28 +213,32 @@ export default function Fifth_SP() {
   const [second, setSecond] = useState<any>(0);
   const [yes,setYes]=useState("YES")
   const [no,setNo]=useState("NO")
+  const [eligible, setEligible] = useState(true);
   
 
   const stepProcess = () => {
     topScroll("top");
     scrollToTop();
     if (step === "Reviewing Your Answers...") {
+      scrollToTop();
       setTimeout(() => {
-        scrollToTop();
         setStep("Matching With Best Options...");
       }, 1500);
     }
     if (step === "Matching With Best Options...") {
+      scrollToTop();
       setTimeout(() => {
-        scrollToTop();
         setStep("Confirming Eligibility...");
       }, 1500);
+
     }
     if (step === "Confirming Eligibility...") {
+
+        
+      scrollToTop();
       setTimeout(() => {
+
         setStep("completed");
-        topScroll("top");
-        scrollToTop();
 
         axios
           .get(process.env.REACT_APP_PROXY + `/visits/8`)
@@ -277,6 +281,7 @@ export default function Fifth_SP() {
 
   useEffect(() => {
     stepProcess();
+    scrollToTop();
   }, [step]);
 
   const topScroll = (id: any) => {
@@ -295,9 +300,10 @@ export default function Fifth_SP() {
     if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
-      topScroll("top");
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
     } else {
+      scrollToTop();
+      setEligible(true);
       setStep("Reviewing Your Answers...");
       topScroll("top");
       scrollToTop();
@@ -328,12 +334,15 @@ export default function Fifth_SP() {
 
   const handleQuizN = () => {
     topScroll("btn");
-    if (quiz === "Are you over the age of 60?  ") {
+    if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
       topScroll("top");
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
-    } else {
+    }
+    else {
+      scrollToTop();
+      setEligible(false);
       setStep("Reviewing Your Answers...");
       scrollToTop();
       topScroll("top");
@@ -375,7 +384,7 @@ export default function Fifth_SP() {
 </div> */}
 
 
-      {step === "process" ? (
+{step === "process" ? (
         <>
           <div className="main-container-5">
             <div className="main-descrition-5-5">
@@ -424,39 +433,46 @@ export default function Fifth_SP() {
             </div>
           </div>
         </>
-      ) : step !== "process" && step !== "completed" ? (
-        <div className="checking" style={{ fontWeight: "700" }}>
-          {step}
-        </div>
-      ) : (
-        <div className="checking">
-          <div className="congrats">Congratulations, You Qualify!</div>
-          <div className="top-description-5">
-            Make A <b>Quick Call to </b> Claim Your No Cost Genetic Screening Kit.
-            
-          </div>
-          <div className="spots-count">Spots remaining: 4</div>
-          <div className="sub-description1">
-          If you DO NOT have an Original Medicare Red White And Blue Card you can not qualify!
-          </div>
-          <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
-          <a href="tel:+18663380677">
+      )  : step !== "process" && step !== "completed" ? (
+  <div className="checking" style={{ fontWeight: "700" }}>
+    {step}
+  </div>
+) : (
+  <div>
+    {eligible ? (
+  <div className="checking">
+    <div className="congrats">Congratulations, You Qualify!</div>
+    <div className="top-description-5">
+      Make A <b>Quick Call to </b> Claim Your No Cost Genetic Screening Kit.
+    </div>
+    <div className="spots-count">Spots remaining: 4</div>
+    <div className="sub-description1">
+      If you DO NOT have an Original Medicare Red White And Blue Card you cannot qualify!
+    </div>
+    <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
+    <a href="tel:+18663380677">
             <div className="call-btn" onClick={handleCall}>
             CALL (866) 338-0677
             </div>
           </a>
-          <div className="sub-title">We Have Reserved Your Spot</div>
-          <div className="sub-description">
-            Due to high call volume, your official agent is waiting for only{" "}
-            <b>3 minutes</b>, then your spot will not be reserved.
-          </div>
-          <div className="timer">
-            <div className="timer-cell">{min}</div>
-            <div className="timer-cell">:</div>
-            <div className="timer-cell">{second}</div>
-          </div>
-        </div>
-      )}
+    <div className="sub-title">We Have Reserved Your Spot</div>
+    <div className="sub-description">
+      Due to high call volume, your official agent is waiting for only <b>3 minutes</b>, then your spot will not be reserved.
+    </div>
+    <div className="timer">
+      <div className="timer-cell">{min}</div>
+      <div className="timer-cell">:</div>
+      <div className="timer-cell">{second}</div>
+    </div>
+  </div>
+    ) : (
+      <div className="checking">
+        Sorry, You're not eligible!
+      </div>
+    )}
+  </div>
+)}
+
       <div className="footer">
         <div className="terms">Terms & Conditions | Privacy Policy</div>
         <div className="copyright">

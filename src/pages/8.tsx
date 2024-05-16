@@ -389,7 +389,7 @@ export default function Fifth_SP() {
 
               <div className="quiz-5" id="btn">
               {quiz === "Do you have a Original Medicare Red White and Blue card?" && (
-          <img className="topic-img-middle-za" src={abc} alt="head"  style={{ borderRadius: '10px' }} />
+          <img className="topic-img-middle-zaa" src={abc} alt="head"  style={{ borderRadius: '10px' }} />
         )}
                 {quiz}
               </div>

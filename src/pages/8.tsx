@@ -332,12 +332,17 @@ export default function Fifth_SP() {
 
   const handleQuizN = () => {
     topScroll("btn");
-    if (quiz === "Are you over the age of 60?  ") {
+    if (quiz === "1. Do you have any personal or family history of chronic diseases?  ") {
       setYes("Yes")
       setNo("No")
       topScroll("top");
       setQuiz("2.  Do you have a Original Medicare Red White and Blue card?");
-    } else {
+    } else if(quiz === "2.  Do you have a Original Medicare Red White and Blue card?"){
+      setNo("true");
+      setStep("Reviewing Your Answers...");
+      scrollToTop();
+    }
+    else {
       scrollToTop();
       setStep("Reviewing Your Answers...");
       scrollToTop();
@@ -380,88 +385,87 @@ export default function Fifth_SP() {
 </div> */}
 
 
-      {step === "process" ? (
-        <>
-          <div className="main-container-5">
-            <div className="main-descrition-5-5">
-               <img className="topic-img-middle-za" src={abba} alt="head" style={{marginTop:'5px'}}/>
-              <div className="main-des-title-6-7" style={{marginTop:'2px'}}>
-                <b>
-               Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!
-
-
-
-
-
-
-                </b> 
-              </div>
-              {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
-              <img className="topic-img-middle-z" src={Head_bg} alt="head" />
-              <div  style={{marginTop:'22px'}}className="main-des-5">
-              Receive your Genetic Test Kit at No cost if you're over 65 years or older, allowing you to detect potential life-threatening diseases such as cancer, diabetes, anemia, alzheimer’s, arthritis, and a wide range of other disorders.
-
-              </div>
-              <div className="main-des-5"  style={{marginTop:'-5px'}}>
-              If you have not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered under Medicare.</b>
-              </div>
-              {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
-            </div>
-            <div style={{marginTop:'9px'}} className="survey">
-
-              <div className="quiz-5" id="btn">
-              {quiz === "2.  Do you have a Original Medicare Red White and Blue card?" && (
-          <img className="topic-img-middle-zaa" src={abc} alt="head"  style={{ borderRadius: '10px',marginBottom:'5px' }} />
-        )}
-                {quiz}
-              </div>
-              <div  className="answer">
-                <div className="answer-btn-5" onClick={handleQuizP}>
-              {yes}
-                </div>
-                <div className="answer-btn-5" onClick={handleQuizN}>
-              {no}
-                </div>
-              {quiz === "2.  Do you have a Original Medicare Red White and Blue card?" && (
-          <p style={{"color": "red"}}>If you have a plan with Humana, Cigna, Aetna, etc you DO NOT Qualify!</p>
-        )}
-              </div>
-            </div>
-          </div>
-        </>
-      ) : step !== "process" && step !== "completed" ? (
-        <div className="checking" style={{ fontWeight: "700" }}>
-          {step}
+{step === "process" ? (
+  <>
+    <div className="main-container-5">
+      <div className="main-description-5-5">
+        <img
+          className="topic-img-middle-za"
+          src={abba}
+          alt="head"
+          style={{ marginTop: "5px" }}
+        />
+        <div className="main-des-title-6-7" style={{ marginTop: "2px" }}>
+          <b>Americans Over 65 Can Now Qualify For Genetic Screening at No Cost!</b>
         </div>
-      ) : (
-        <div className="checking">
-          <div className="congrats">Congratulations, You Qualify!</div>
-          <div className="top-description-5">
-            Make A <b>Quick Call to </b> Claim Your No Cost Genetic Screening Kit.
-            
-          </div>
-          <div className="spots-count">Spots remaining: 4</div>
-          <div className="sub-description">
-          If you DO NOT have an Original Medicare Red White And Blue Card you can not qualify!
-          </div>
-          <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
-          <a href="tel:+18663380677">
-            <div className="call-btn" onClick={handleCall}>
-            CALL (866) 338-0677
-            </div>
-          </a>
-          <div className="sub-title">We Have Reserved Your Spot</div>
-          <div className="sub-description">
-            Due to high call volume, your official agent is waiting for only{" "}
-            <b>3 minutes</b>, then your spot will not be reserved.
-          </div>
-          <div className="timer">
-            <div className="timer-cell">{min}</div>
-            <div className="timer-cell">:</div>
-            <div className="timer-cell">{second}</div>
-          </div>
+        <img className="topic-img-middle-z" src={Head_bg} alt="head" />
+        <div style={{ marginTop: "22px" }} className="main-des-5">
+          Receive your Genetic Test Kit at No cost if you're over 65 years or older, allowing you to detect potential life-threatening diseases such as cancer, diabetes, anemia, Alzheimer’s, arthritis, and a wide range of other disorders.
         </div>
-      )}
+        <div className="main-des-5" style={{ marginTop: "-5px" }}>
+          If you have not tested for these deadly diseases through high-quality genetic screening <b>get it done now while it’s still covered under Medicare.</b>
+        </div>
+      </div>
+      <div style={{ marginTop: "9px" }} className="survey">
+        <div className="quiz-5" id="btn">
+          {quiz === "2. Do you have an Original Medicare Red White and Blue card?" && (
+            <img
+              className="topic-img-middle-zaa"
+              src={abc}
+              alt="head"
+              style={{ borderRadius: "10px", marginBottom: "5px" }}
+            />
+          )}
+          {quiz}
+        </div>
+        <div className="answer">
+          <div className="answer-btn-5" onClick={handleQuizP}>
+            {yes}
+          </div>
+          <div className="answer-btn-5" onClick={handleQuizN}>
+            {no}
+          </div>
+          {quiz === "2. Do you have an Original Medicare Red White and Blue card?" && (
+            <p style={{ color: "red" }}>
+              If you have a plan with Humana, Cigna, Aetna, etc you DO NOT Qualify!
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
+  </>
+) : step !== "process" && step !== "completed" ? (
+  <div className="checking" style={{ fontWeight: "700" }}>
+    {step}
+  </div>
+) : (
+  <div className="checking">
+    <div className="congrats">Congratulations, You Qualify!</div>
+    <div className="top-description-5">
+      Make A <b>Quick Call to </b> Claim Your No Cost Genetic Screening Kit.
+    </div>
+    <div className="spots-count">Spots remaining: 4</div>
+    <div className="sub-description1">
+      If you DO NOT have an Original Medicare Red White And Blue Card you cannot qualify!
+    </div>
+    <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
+    <a href="tel:+18663380677">
+      <div className="call-btn" onClick={handleCall}>
+        CALL (866) 338-0677
+      </div>
+    </a>
+    <div className="sub-title">We Have Reserved Your Spot</div>
+    <div className="sub-description">
+      Due to high call volume, your official agent is waiting for only <b>3 minutes</b>, then your spot will not be reserved.
+    </div>
+    <div className="timer">
+      <div className="timer-cell">{min}</div>
+      <div className="timer-cell">:</div>
+      <div className="timer-cell">{second}</div>
+    </div>
+  </div>
+)}
+
       <div className="footer">
         <div className="terms">Terms & Conditions | Privacy Policy</div>
         <div className="copyright">

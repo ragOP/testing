@@ -10,6 +10,7 @@ import Head_bg from "../assets/body.png";
 import abba from "../assets/abba.png";
 import abc from "../assets/abc.jpeg";
 import Headline from "../assets/headline_spandeb1.png";
+import ScrollToTop from "react-scroll-to-top";
 
 // google tag manager
 
@@ -20,13 +21,14 @@ const tagManagerArgs = {
 TagManager.initialize(tagManagerArgs);
 
 export default function Fifth_SP() {
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  
+  const scrollToTop = ScrollToTop;
+  // const scrollToTop = () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // };
 
 
 
@@ -165,16 +167,17 @@ export default function Fifth_SP() {
    
       // setEligible(false);
       // setStep(" ");  
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth", // Smooth scroll
-      });
+      // window.scrollTo({
+      //   top: 0,
+      //   behavior: "auto", // Smooth scroll
+      // });
     }
   };
 
 
   const handleNew=(value:any)=>{
     console.log('value',value);
+ 
     if(value==="OriginalMedicare"){
       setStep(" ");
       setEligible(true)
@@ -183,7 +186,10 @@ export default function Fifth_SP() {
         setStep(" ");  
       setEligible(false)
     }
-    
+    window.scrollTo({
+      top: 0,
+      behavior: "auto"
+    });
   }
   return (
     <div>
